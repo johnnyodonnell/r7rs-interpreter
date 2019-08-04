@@ -1,10 +1,13 @@
 {
-  "name": "scheme.js",
-  "version": "1.0.0",
+  "name": "schemescript",
+  "version": "0.0.2",
   "description": "",
   "main": "out/scheme.js",
   "scripts": {
     "build": "tsc"
+  },
+  "bin": {
+    "scheme": "out/scheme.js"
   },
   "author": "Johnny O'Donnell",
   "license": "ISC",
