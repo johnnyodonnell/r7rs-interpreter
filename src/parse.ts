@@ -15,7 +15,7 @@ const tokenize = (text: string) => {
 };
 
 const atom = (token: string) => {
-    if (Number(token)) {
+    if (!isNaN(Number(token))) {
         return Number(token);
     } else if (token.length
             && ((token[0] == '"') && (token[token.length - 1] == '"'))) {
