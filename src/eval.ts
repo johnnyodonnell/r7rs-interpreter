@@ -2,6 +2,7 @@ import Environment from "./environment/Environment";
 import SchemeType from "./scheme-types/SchemeType";
 import SchemeSymbol from "./scheme-types/SchemeSymbol";
 import {AST, ASTNode} from "./abstract-syntax-tree";
+import SchemeString from "./scheme-types/SchemeString";
 
 
 const evaluate: (expr: AST | ASTNode, env: Environment) => SchemeType = (expr, env) => {
@@ -9,6 +10,8 @@ const evaluate: (expr: AST | ASTNode, env: Environment) => SchemeType = (expr, e
         return env.get(expr);
     } else if ((typeof expr) === "number") {
         return expr;
+    } else if (expr instanceof SchemeString) {
+        return expr.toString();
     }
 
     if (!("length" in expr)) {
